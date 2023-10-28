@@ -618,8 +618,6 @@ nav > i {
 
 .page7 {
   position: relative;
-  top: 100%;
-  z-index: 9;
   height: 100vh;
   padding: 1.5vw 2vw;
   width: 100%;
