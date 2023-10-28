@@ -2,10 +2,694 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: gilroy;
+  color: #fff;
 }
 
 body,
 html {
   width: 100%;
   height: 100%;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  background-color: #1f1f1f;
+}
+
+.page1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 1.5vw 8vw;
+}
+
+.loder {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #1f1f1f;
+  z-index: 10;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #e8e121ae;
+  z-index: 11;
+  /* left: 100%; */
+  transition: all ease 0.5s;
+}
+
+.loder > h1 {
+  font-weight: 600;
+  display: flex;
+  align-items: end;
+  gap: 0.2vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 20vw;
+  color: #000;
+  transform: translate(-50%, -50%);
+}
+
+.loder > h1 > span {
+  font-size: 6vw;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 2vw;
+}
+
+.loder > h2 {
+  font-size: 10vw;
+  font-weight: 300;
+  display: flex;
+  align-items: end;
+  margin-right: 4vw;
+  color: #000;
+  position: relative;
+  z-index: 999;
+}
+
+.loder > h2 > span {
+  font-size: 4vw;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 2vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 9;
+}
+
+nav > h1 {
+  font-weight: 600;
+  display: flex;
+  align-items: end;
+  gap: 0.2vw;
+  cursor: pointer;
+}
+
+nav > h1 > span {
+  font-size: 0.7vw;
+  font-weight: 200;
+}
+
+nav > i {
+  padding: 0.5vw 0.6vw;
+  border-radius: 50%;
+  color: #000;
+  font-size: 1.3vw;
+  font-weight: 700;
+  background-color: #ffffff;
+}
+
+.page1-main {
+  height: 80vh;
+  width: 100%;
+  /* background-color: salmon; */
+  overflow: hidden;
+  margin-top: 1vw;
+  border-radius: 1vw;
+  position: relative;
+  pointer-events: none;
+}
+
+.page1-main > video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* position: absolute; */
+}
+
+.page1-scroller {
+  display: flex;
+  white-space: nowrap;
+  padding: 0.7vw 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.page1-scroller::before {
+  content: "";
+  height: 100%;
+  width: 10vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(90deg, #1f1f1f, transparent);
+  z-index: 9;
+}
+
+.page1-scroller::after {
+  content: "";
+  height: 100%;
+  width: 10vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(270deg, #1f1f1f, transparent);
+  z-index: 9;
+}
+
+.page1-scroller > h1 {
+  animation: scroller 30s linear infinite both;
+  font-weight: 400;
+}
+
+@keyframes scroller {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(calc(-100% - 4px));
+  }
+}
+
+.page2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 1.5vw 8vw;
+}
+
+.page2-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 1vw;
+  background-color: #f5f5f5;
+  padding: 6vw 4vw;
+  padding-bottom: 4vw;
+  display: flex;
+}
+
+.page2-box-left {
+  position: relative;
+  height: 100%;
+  width: 50%;
+}
+
+.page2-box-left > h1 {
+  color: #000;
+  font-weight: 400;
+  position: relative;
+}
+
+.page2-box-left > h1::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  top: 0;
+  height: 100%;
+  width: 0.4vh;
+  background-color: #e8e221;
+}
+
+.page2-box-right {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+.page2-box-right-elem {
+  position: relative;
+}
+
+.page2-box-right-elem > h3 {
+  position: relative;
+  color: #000;
+  font-weight: 400;
+}
+
+.page2-box-right-elem > p {
+  position: relative;
+  color: #000;
+  font-weight: 400;
+  font-size: 1.1vw;
+  opacity: 0.7;
+  line-height: 1.5;
+  margin-top: 2vw;
+}
+
+.page3 {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  padding-top: 0;
+  padding: 1.5vw 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page3-left {
+  height: 100%;
+  width: 49.5%;
+  border-radius: 1vw;
+  background-image: url("https://assets-global.website-files.com/6509a83ab0a736f6f16d82a5/6511a2b601257725a8b92995_HQX21_Shuttleworthstra%C3%9Fe_Produktion-Anlieferung-p-1080.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  padding: 1vw;
+  transition: all ease 0.5s;
+}
+
+.page3-left i {
+  transition: all ease 0.5s;
+}
+
+.page3-left:hover {
+  scale: 0.95;
+}
+
+.page3-left:hover i {
+  transform: rotate(-90deg);
+}
+
+.page3-right:hover {
+  scale: 0.95;
+}
+
+.page3-right:hover i {
+  transform: rotate(-90deg);
+}
+
+.page3-right {
+  height: 100%;
+  width: 49.5%;
+  border-radius: 1vw;
+  background-image: url("https://assets-global.website-files.com/6509a83ab0a736f6f16d82a5/6511a2b6203e2c22087666fc_HQX21_Shuttleworthstra%C3%9Fe_Innenhof-Terrasse-p-1080.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  padding: 1vw;
+  transition: all ease 0.5s;
+}
+
+.page3-right i {
+  transition: all ease 0.5s;
+}
+
+.page3-elem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.page3-elem-text > h3 {
+  font-weight: 500;
+  font-size: 1.8vw;
+}
+
+.page3-elem > i {
+  padding: 0.5vw;
+  background-color: #e8e221;
+  border-radius: 50%;
+  color: #000;
+}
+
+.page4 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 1.5vw 8vw;
+}
+
+.page4-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 1vw;
+  background-color: #f5f5f5;
+  padding: 6vw 4vw;
+  /* padding-bottom: 4vw; */
+  display: flex;
+}
+
+.page4-left {
+  position: relative;
+  width: 50%;
+  color: #000;
+  margin: auto 0;
+}
+
+.page4-left > h1 {
+  color: #000;
+  font-weight: 500;
+  width: 60%;
+  line-height: 1;
+  position: relative;
+  margin-left: 1vw;
+}
+
+.page4-left > h1::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  top: 0;
+  height: 100%;
+  width: 0.4vh;
+  background-color: #e8e221;
+}
+
+.page4-left > h1 > b {
+  color: #000;
+}
+
+.page4-left > p {
+  color: #000;
+  margin-top: 2vw;
+  opacity: 0.7;
+  font-size: 1.45vw;
+}
+
+.page4-left > button {
+  background-color: #ffffff;
+  border: none;
+  color: #000;
+  padding: 0.7vw 1.3vw;
+  border-radius: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  font-weight: 500;
+  margin-top: 4vw;
+  font-size: 0.8vw;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.244);
+}
+
+.page4-left > button > i {
+  color: #000;
+}
+
+.page4-right {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  /* background-color: salmon; */
+  display: flex;
+  justify-content: center;
+}
+
+.page4-elem {
+  position: absolute;
+  height: 60%;
+  width: 55%;
+  border-radius: 1vw;
+  background-color: #e5e163;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.244);
+  /* opacity: 0; */
+}
+
+.page4-elem > h3 {
+  font-weight: 500;
+  color: #000;
+  width: 80%;
+  font-size: 1.6vw;
+}
+
+.page4-elem > p {
+  color: #000;
+  font-size: 1vw;
+  margin-top: 2vw;
+  opacity: 0.7;
+}
+
+.page4-elem:nth-child(2) {
+  top: 62%;
+  width: 58%;
+}
+
+.page4-elem:nth-child(3) {
+  top: 124%;
+  width: 60%;
+}
+
+.page5 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 1.5vw 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page5-left {
+  position: relative;
+  height: 100%;
+  width: 64%;
+  /* background-color: salmon; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 0.5vw; */
+}
+
+.page5-left-elem {
+  position: relative;
+  width: 49%;
+  height: 48%;
+  border-radius: 1vw;
+  background-color: #f2ed49;
+  background-position: center;
+  background-size: cover;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page5-left-elem > h3 {
+  font-weight: 400;
+  font-size: 2vw;
+  color: #000;
+}
+
+.page5-left-elem > p {
+  font-weight: 400;
+  opacity: 0.7;
+  font-size: 1.2vw;
+  color: #000;
+}
+
+.page5-left-elem:nth-child(2) {
+  background-image: url("https://assets-global.website-files.com/6509a83ab0a736f6f16d82a5/6523dc66ea4ee30f9c28846c_HQX21_Au%C3%9Fenansicht_Hauptbu%CC%88rogeba%CC%88ude-p-800.webp");
+}
+
+.page5-left-elem:nth-child(3) {
+  background-image: url("https://assets-global.website-files.com/6509a83ab0a736f6f16d82a5/6523dd7185bfabb52fc6c189_HQX21_Shuttleworthstra%C3%9Fe_Produktion-Anlieferung-2-p-800.webp");
+}
+
+.page5-right {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 65%);
+  background-color: #f5f5f5;
+  border-radius: 1vw;
+  padding: 2vw;
+}
+
+.page5-right > h1 {
+  font-size: 2.5vw;
+  color: #000;
+  font-weight: 500;
+  opacity: 0.6;
+  margin-bottom: 3vw;
+}
+
+.page5-right > h1 > b {
+  font-size: 2.5vw;
+  color: #000;
+}
+
+.page5-right-text {
+  position: relative;
+  opacity: 0.6;
+  margin-top: 2vw;
+}
+
+.page5-right-text > h3 {
+  color: #000;
+  font-weight: 500;
+}
+
+.page5-right-text > p {
+  color: #000;
+  font-weight: 500;
+  font-size: 0.95vw;
+  line-height: 1.5;
+  margin-top: 1vw;
+}
+
+.page6 {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  padding: 1.5vw 8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page6-left {
+  height: 100%;
+  width: 40%;
+  border-radius: 1vw;
+  background-color: #f2ed49;
+  /* display: flex; */
+  padding: 2vw;
+  transition: all ease 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page6-left > h3 {
+  font-weight: 400;
+  font-size: 1.4vw;
+  color: #000;
+}
+
+.page6-left-text {
+  display: flex;
+  align-items: end;
+}
+
+.page6-left-text > h1 {
+  font-weight: 400;
+  font-size: 2vw;
+  color: #000;
+}
+
+.page6-left-text > h1 > b {
+  font-size: 2vw;
+  color: #000;
+}
+
+.page6-left-text > i {
+  padding: 0.5vw;
+  background-color: #000;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+
+.page6-left:hover {
+  scale: 0.95;
+}
+
+.page6-left:hover i {
+  transform: rotate(-90deg);
+}
+
+.page6-right {
+  height: 100%;
+  width: 59%;
+  border-radius: 1vw;
+  background-image: url("https://assets-global.website-files.com/6509a83ab0a736f6f16d82a5/6511a2b6bbf0208953a509c7_HQX21_Shuttleworthstra%C3%9Fe_Frontansicht_au%C3%9Fen_Sonnenuntergang-p-1080.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.page7 {
+  position: relative;
+  top: 100%;
+  z-index: 9;
+  height: 100vh;
+  padding: 1.5vw 2vw;
+  width: 100%;
+}
+
+.page7-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 1vw;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page7-box > h1 {
+  font-weight: 600;
+  display: flex;
+  align-items: end;
+  font-size: 6vw;
+  gap: 0.2vw;
+  cursor: pointer;
+  color: #000;
+  margin-top: 6vw;
+}
+
+.page7-box > h1 > span {
+  font-size: 3vw;
+  font-weight: 300;
+  color: #000;
+}
+
+.info {
+  display: flex;
+  gap: 3vw;
+  margin-top: 6vw;
+}
+
+.info > h2 {
+  color: #000;
+  font-weight: 500;
+  font-size: 1.5vw;
+}
+
+.address {
+  text-align: center;
+  color: #000;
+  margin-top: 4vw;
+}
+
+.address > h3 {
+  font-weight: 400;
+  font-size: 1vw;
+  opacity: 0.7;
+  color: #000;
+}
+
+.icons {
+  position: relative;
+  margin-top: 5vw;
+  display: flex;
+  gap: 1vw;
+}
+
+.icons i {
+  padding: 0.8vw;
+  border-radius: 50%;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 1.5vw;
+  opacity: 0.5;
 }
